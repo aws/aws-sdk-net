@@ -70,10 +70,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("codeVulnerabilityDetails", targetDepth))
+                {
+                    var unmarshaller = CodeVulnerabilityDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CodeVulnerabilityDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("epss", targetDepth))
+                {
+                    var unmarshaller = EpssDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Epss = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("exploitabilityDetails", targetDepth))

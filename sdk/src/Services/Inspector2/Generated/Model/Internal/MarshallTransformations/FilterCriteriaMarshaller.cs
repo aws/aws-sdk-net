@@ -61,6 +61,54 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetCodeVulnerabilityDetectorName())
+            {
+                context.Writer.WritePropertyName("codeVulnerabilityDetectorName");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeVulnerabilityDetectorNameListValue in requestObject.CodeVulnerabilityDetectorName)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeVulnerabilityDetectorNameListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCodeVulnerabilityDetectorTags())
+            {
+                context.Writer.WritePropertyName("codeVulnerabilityDetectorTags");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeVulnerabilityDetectorTagsListValue in requestObject.CodeVulnerabilityDetectorTags)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeVulnerabilityDetectorTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetCodeVulnerabilityFilePath())
+            {
+                context.Writer.WritePropertyName("codeVulnerabilityFilePath");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCodeVulnerabilityFilePathListValue in requestObject.CodeVulnerabilityFilePath)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCodeVulnerabilityFilePathListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetComponentId())
             {
                 context.Writer.WritePropertyName("componentId");
@@ -231,6 +279,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectEcrImageTagsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEpssScore())
+            {
+                context.Writer.WritePropertyName("epssScore");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEpssScoreListValue in requestObject.EpssScore)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEpssScoreListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

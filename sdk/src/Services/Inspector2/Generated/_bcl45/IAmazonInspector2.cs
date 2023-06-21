@@ -171,6 +171,62 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  BatchGetCodeSnippet
+
+
+        /// <summary>
+        /// Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities
+        /// in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeSnippet service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCodeSnippet service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">REST API Reference for BatchGetCodeSnippet Operation</seealso>
+        BatchGetCodeSnippetResponse BatchGetCodeSnippet(BatchGetCodeSnippetRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities
+        /// in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeSnippet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeSnippet service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">REST API Reference for BatchGetCodeSnippet Operation</seealso>
+        Task<BatchGetCodeSnippetResponse> BatchGetCodeSnippetAsync(BatchGetCodeSnippetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchGetFreeTrialInfo
 
 
@@ -403,6 +459,68 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  CancelSbomExport
+
+
+        /// <summary>
+        /// Cancels a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSbomExport service method.</param>
+        /// 
+        /// <returns>The response from the CancelSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">REST API Reference for CancelSbomExport Operation</seealso>
+        CancelSbomExportResponse CancelSbomExport(CancelSbomExportRequest request);
+
+
+
+        /// <summary>
+        /// Cancels a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSbomExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">REST API Reference for CancelSbomExport Operation</seealso>
+        Task<CancelSbomExportResponse> CancelSbomExportAsync(CancelSbomExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateFilter
 
 
@@ -534,6 +652,68 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFindingsReport">REST API Reference for CreateFindingsReport Operation</seealso>
         Task<CreateFindingsReportResponse> CreateFindingsReportAsync(CreateFindingsReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSbomExport
+
+
+        /// <summary>
+        /// Creates a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSbomExport service method.</param>
+        /// 
+        /// <returns>The response from the CreateSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">REST API Reference for CreateSbomExport Operation</seealso>
+        CreateSbomExportResponse CreateSbomExport(CreateSbomExportRequest request);
+
+
+
+        /// <summary>
+        /// Creates a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSbomExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">REST API Reference for CreateSbomExport Operation</seealso>
+        Task<CreateSbomExportResponse> CreateSbomExportAsync(CreateSbomExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1137,6 +1317,68 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  GetEncryptionKey
+
+
+        /// <summary>
+        /// Gets an encryption key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the GetEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">REST API Reference for GetEncryptionKey Operation</seealso>
+        GetEncryptionKeyResponse GetEncryptionKey(GetEncryptionKeyRequest request);
+
+
+
+        /// <summary>
+        /// Gets an encryption key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">REST API Reference for GetEncryptionKey Operation</seealso>
+        Task<GetEncryptionKeyResponse> GetEncryptionKeyAsync(GetEncryptionKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetFindingsReportStatus
 
 
@@ -1258,6 +1500,68 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetMember">REST API Reference for GetMember Operation</seealso>
         Task<GetMemberResponse> GetMemberAsync(GetMemberRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSbomExport
+
+
+        /// <summary>
+        /// Gets details of a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSbomExport service method.</param>
+        /// 
+        /// <returns>The response from the GetSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">REST API Reference for GetSbomExport Operation</seealso>
+        GetSbomExportResponse GetSbomExport(GetSbomExportRequest request);
+
+
+
+        /// <summary>
+        /// Gets details of a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSbomExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">REST API Reference for GetSbomExport Operation</seealso>
+        Task<GetSbomExportResponse> GetSbomExportAsync(GetSbomExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1781,6 +2085,70 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  ResetEncryptionKey
+
+
+        /// <summary>
+        /// Resets an encryption key. After the key is reset your resources will be encrypted
+        /// by an Amazon Web Services owned key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the ResetEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">REST API Reference for ResetEncryptionKey Operation</seealso>
+        ResetEncryptionKeyResponse ResetEncryptionKey(ResetEncryptionKeyRequest request);
+
+
+
+        /// <summary>
+        /// Resets an encryption key. After the key is reset your resources will be encrypted
+        /// by an Amazon Web Services owned key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEncryptionKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">REST API Reference for ResetEncryptionKey Operation</seealso>
+        Task<ResetEncryptionKeyResponse> ResetEncryptionKeyAsync(ResetEncryptionKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchVulnerabilities
 
 
@@ -2064,6 +2432,70 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration">REST API Reference for UpdateEc2DeepInspectionConfiguration Operation</seealso>
         Task<UpdateEc2DeepInspectionConfigurationResponse> UpdateEc2DeepInspectionConfigurationAsync(UpdateEc2DeepInspectionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateEncryptionKey
+
+
+        /// <summary>
+        /// Updates an encryption key. A <code>ResourceNotFoundException</code> means that an
+        /// AWS owned key is being used for encryption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">REST API Reference for UpdateEncryptionKey Operation</seealso>
+        UpdateEncryptionKeyResponse UpdateEncryptionKey(UpdateEncryptionKeyRequest request);
+
+
+
+        /// <summary>
+        /// Updates an encryption key. A <code>ResourceNotFoundException</code> means that an
+        /// AWS owned key is being used for encryption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">REST API Reference for UpdateEncryptionKey Operation</seealso>
+        Task<UpdateEncryptionKeyResponse> UpdateEncryptionKeyAsync(UpdateEncryptionKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

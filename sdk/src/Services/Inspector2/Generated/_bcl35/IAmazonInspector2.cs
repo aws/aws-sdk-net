@@ -161,6 +161,60 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  BatchGetCodeSnippet
+
+
+        /// <summary>
+        /// Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities
+        /// in.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeSnippet service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetCodeSnippet service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">REST API Reference for BatchGetCodeSnippet Operation</seealso>
+        BatchGetCodeSnippetResponse BatchGetCodeSnippet(BatchGetCodeSnippetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetCodeSnippet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeSnippet operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetCodeSnippet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">REST API Reference for BatchGetCodeSnippet Operation</seealso>
+        IAsyncResult BeginBatchGetCodeSnippet(BatchGetCodeSnippetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetCodeSnippet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetCodeSnippet.</param>
+        /// 
+        /// <returns>Returns a  BatchGetCodeSnippetResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">REST API Reference for BatchGetCodeSnippet Operation</seealso>
+        BatchGetCodeSnippetResponse EndBatchGetCodeSnippet(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchGetFreeTrialInfo
 
 
@@ -381,6 +435,63 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  CancelSbomExport
+
+
+        /// <summary>
+        /// Cancels a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSbomExport service method.</param>
+        /// 
+        /// <returns>The response from the CancelSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">REST API Reference for CancelSbomExport Operation</seealso>
+        CancelSbomExportResponse CancelSbomExport(CancelSbomExportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSbomExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSbomExport operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSbomExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">REST API Reference for CancelSbomExport Operation</seealso>
+        IAsyncResult BeginCancelSbomExport(CancelSbomExportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelSbomExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSbomExport.</param>
+        /// 
+        /// <returns>Returns a  CancelSbomExportResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">REST API Reference for CancelSbomExport Operation</seealso>
+        CancelSbomExportResponse EndCancelSbomExport(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateFilter
 
 
@@ -497,6 +608,63 @@ namespace Amazon.Inspector2
         /// <returns>Returns a  CreateFindingsReportResult from Inspector2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFindingsReport">REST API Reference for CreateFindingsReport Operation</seealso>
         CreateFindingsReportResponse EndCreateFindingsReport(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateSbomExport
+
+
+        /// <summary>
+        /// Creates a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSbomExport service method.</param>
+        /// 
+        /// <returns>The response from the CreateSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">REST API Reference for CreateSbomExport Operation</seealso>
+        CreateSbomExportResponse CreateSbomExport(CreateSbomExportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSbomExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSbomExport operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSbomExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">REST API Reference for CreateSbomExport Operation</seealso>
+        IAsyncResult BeginCreateSbomExport(CreateSbomExportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSbomExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSbomExport.</param>
+        /// 
+        /// <returns>Returns a  CreateSbomExportResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">REST API Reference for CreateSbomExport Operation</seealso>
+        CreateSbomExportResponse EndCreateSbomExport(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1060,6 +1228,63 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  GetEncryptionKey
+
+
+        /// <summary>
+        /// Gets an encryption key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the GetEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">REST API Reference for GetEncryptionKey Operation</seealso>
+        GetEncryptionKeyResponse GetEncryptionKey(GetEncryptionKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEncryptionKey operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEncryptionKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">REST API Reference for GetEncryptionKey Operation</seealso>
+        IAsyncResult BeginGetEncryptionKey(GetEncryptionKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEncryptionKey.</param>
+        /// 
+        /// <returns>Returns a  GetEncryptionKeyResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">REST API Reference for GetEncryptionKey Operation</seealso>
+        GetEncryptionKeyResponse EndGetEncryptionKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetFindingsReportStatus
 
 
@@ -1171,6 +1396,63 @@ namespace Amazon.Inspector2
         /// <returns>Returns a  GetMemberResult from Inspector2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetMember">REST API Reference for GetMember Operation</seealso>
         GetMemberResponse EndGetMember(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSbomExport
+
+
+        /// <summary>
+        /// Gets details of a software bill of materials (SBOM) report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSbomExport service method.</param>
+        /// 
+        /// <returns>The response from the GetSbomExport service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">REST API Reference for GetSbomExport Operation</seealso>
+        GetSbomExportResponse GetSbomExport(GetSbomExportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSbomExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSbomExport operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSbomExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">REST API Reference for GetSbomExport Operation</seealso>
+        IAsyncResult BeginGetSbomExport(GetSbomExportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSbomExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSbomExport.</param>
+        /// 
+        /// <returns>Returns a  GetSbomExportResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">REST API Reference for GetSbomExport Operation</seealso>
+        GetSbomExportResponse EndGetSbomExport(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1694,6 +1976,64 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  ResetEncryptionKey
+
+
+        /// <summary>
+        /// Resets an encryption key. After the key is reset your resources will be encrypted
+        /// by an Amazon Web Services owned key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the ResetEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">REST API Reference for ResetEncryptionKey Operation</seealso>
+        ResetEncryptionKeyResponse ResetEncryptionKey(ResetEncryptionKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetEncryptionKey operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetEncryptionKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">REST API Reference for ResetEncryptionKey Operation</seealso>
+        IAsyncResult BeginResetEncryptionKey(ResetEncryptionKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetEncryptionKey.</param>
+        /// 
+        /// <returns>Returns a  ResetEncryptionKeyResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">REST API Reference for ResetEncryptionKey Operation</seealso>
+        ResetEncryptionKeyResponse EndResetEncryptionKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchVulnerabilities
 
 
@@ -1964,6 +2304,64 @@ namespace Amazon.Inspector2
         /// <returns>Returns a  UpdateEc2DeepInspectionConfigurationResult from Inspector2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration">REST API Reference for UpdateEc2DeepInspectionConfiguration Operation</seealso>
         UpdateEc2DeepInspectionConfigurationResponse EndUpdateEc2DeepInspectionConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateEncryptionKey
+
+
+        /// <summary>
+        /// Updates an encryption key. A <code>ResourceNotFoundException</code> means that an
+        /// AWS owned key is being used for encryption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEncryptionKey service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">REST API Reference for UpdateEncryptionKey Operation</seealso>
+        UpdateEncryptionKeyResponse UpdateEncryptionKey(UpdateEncryptionKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey operation on AmazonInspector2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEncryptionKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">REST API Reference for UpdateEncryptionKey Operation</seealso>
+        IAsyncResult BeginUpdateEncryptionKey(UpdateEncryptionKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEncryptionKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEncryptionKey.</param>
+        /// 
+        /// <returns>Returns a  UpdateEncryptionKeyResult from Inspector2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">REST API Reference for UpdateEncryptionKey Operation</seealso>
+        UpdateEncryptionKeyResponse EndUpdateEncryptionKey(IAsyncResult asyncResult);
 
         #endregion
         

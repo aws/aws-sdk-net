@@ -33,11 +33,30 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class TitleAggregation
     {
+        private AggregationFindingType _findingType;
         private AggregationResourceType _resourceType;
         private TitleSortBy _sortBy;
         private SortOrder _sortOrder;
         private List<StringFilter> _titles = new List<StringFilter>();
         private List<StringFilter> _vulnerabilityIds = new List<StringFilter>();
+
+        /// <summary>
+        /// Gets and sets the property FindingType. 
+        /// <para>
+        /// The type of finding to aggregate on.
+        /// </para>
+        /// </summary>
+        public AggregationFindingType FindingType
+        {
+            get { return this._findingType; }
+            set { this._findingType = value; }
+        }
+
+        // Check to see if FindingType property is set
+        internal bool IsSetFindingType()
+        {
+            return this._findingType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceType. 

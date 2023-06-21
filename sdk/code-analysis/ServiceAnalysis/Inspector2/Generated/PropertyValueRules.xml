@@ -21,6 +21,14 @@
     <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.CancelSbomExportRequest.ReportId</property>
+    <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CancelSbomExportResponse.ReportId</property>
+    <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.CreateFilterRequest.Description</property>
     <min>1</min>
     <max>512</max>
@@ -42,6 +50,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CreateFindingsReportResponse.ReportId</property>
+    <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CreateSbomExportResponse.ReportId</property>
     <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -105,6 +117,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetEncryptionKeyResponse.KmsKeyId</property>
+    <pattern>^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.GetFindingsReportStatusRequest.ReportId</property>
     <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
   </property-value-rule>
@@ -117,6 +133,18 @@
     <min>12</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetSbomExportRequest.ReportId</property>
+    <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetSbomExportResponse.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetSbomExportResponse.ReportId</property>
+    <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.ListAccountPermissionsRequest.MaxResults</property>
@@ -276,6 +304,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateEncryptionKeyRequest.KmsKeyId</property>
+    <pattern>^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateFilterRequest.Description</property>
     <min>1</min>
     <max>512</max>
@@ -411,6 +443,51 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeFilePath.FileName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeFilePath.FilePath</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeLine.Content</property>
+    <min>0</min>
+    <max>240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSnippetError.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSnippetError.FindingArn</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeSnippetResult.FindingArn</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeVulnerabilityDetails.DetectorId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeVulnerabilityDetails.DetectorName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeVulnerabilityDetails.RuleId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.CodeVulnerabilityDetails.SourceLambdaLayerArn</property>
+    <pattern>^arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.CoverageMapFilter.Key</property>
     <min>1</min>
   </property-value-rule>
@@ -502,6 +579,11 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Ec2Metadata.AmiId</property>
     <pattern>^ami-([a-z0-9]{8}|[a-z0-9]{17}|\*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.EpssDetails.Score</property>
+    <min>0</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.FailedAccount.AccountId</property>
@@ -751,6 +833,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.ResourceMapFilter.Key</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ResourceMapFilter.Value</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.ResourceStringFilter.Value</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.State.ErrorMessage</property>
     <min>1</min>
   </property-value-rule>
@@ -758,6 +853,16 @@
     <property>Amazon.Inspector2.Model.StringFilter.Value</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.SuggestedFix.Code</property>
+    <min>1</min>
+    <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.SuggestedFix.Description</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.TitleAggregationResponse.AccountId</property>
