@@ -1,3 +1,19 @@
+### 3.7.574.0 (2023-06-21 18:23 UTC)
+* DynamoDBv2 (3.7.104.1)
+	* Documentation updates for DynamoDB
+* ElasticMapReduce (3.7.106.0)
+	* This release introduces a new Amazon EMR EPI called ListSupportedInstanceTypes that returns a list of all instance types supported by a given EMR release.
+* Inspector2 (3.7.106.0)
+	* This release adds support for Software Bill of Materials (SBOM) export and the general availability of code scanning for AWS Lambda functions.
+* MediaConvert (3.7.112.0)
+	* This release introduces the bandwidth reduction filter for the HEVC encoder, increases the limits of outputs per job, and updates support for the Nagra SDK to version 1.14.7.
+* MQ (3.7.101.0)
+	* The Cross Region Disaster Recovery feature allows to replicate a brokers state from one region to another in order to provide customers with multi-region resiliency in the event of a regional outage.
+* SageMaker (3.7.137.0)
+	* This release provides support in SageMaker for output files in training jobs to be uploaded without compression and enable customer to deploy uncompressed model from S3 to real-time inference Endpoints. In addition, ml.trn1n.32xlarge is added to supported instance type list in training job.
+* Transfer (3.7.106.0)
+	* This release adds a new parameter StructuredLogDestinations to CreateServer, UpdateServer APIs.
+
 ### 3.7.573.0 (2023-06-20 23:51 UTC)
 * DynamoDBv2 (3.7.104.0)
 	* Updated documentation for DynamoDB Streams. Add non-generic batchwrite methods on DynamoDBContext.
