@@ -2215,9 +2215,8 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Returns the regional endpoint information. This action must be included in your VPC
-        /// endpoint policies, or access to the DescribeEndpoints API will be denied. For more
-        /// information on policy permissions, please see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork
+        /// Returns the regional endpoint information. For more information on policy permissions,
+        /// please see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints">Internetwork
         /// traffic privacy</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
