@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputDataConfig Marshaller
+    /// S3ModelDataSource Marshaller
     /// </summary>
-    public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, JsonMarshallerContext> 
+    public class S3ModelDataSourceMarshaller : IRequestMarshaller<S3ModelDataSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3ModelDataSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetCompressionType())
             {
@@ -51,16 +51,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CompressionType);
             }
 
-            if(requestObject.IsSetKmsKeyId())
+            if(requestObject.IsSetS3DataType())
             {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WritePropertyName("S3DataType");
+                context.Writer.Write(requestObject.S3DataType);
             }
 
-            if(requestObject.IsSetS3OutputPath())
+            if(requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3OutputPath");
-                context.Writer.Write(requestObject.S3OutputPath);
+                context.Writer.WritePropertyName("S3Uri");
+                context.Writer.Write(requestObject.S3Uri);
             }
 
         }
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutputDataConfigMarshaller Instance = new OutputDataConfigMarshaller();
+        public readonly static S3ModelDataSourceMarshaller Instance = new S3ModelDataSourceMarshaller();
 
     }
 }

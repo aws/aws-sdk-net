@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputDataConfig Marshaller
+    /// ModelDataSource Marshaller
     /// </summary>
-    public class OutputDataConfigMarshaller : IRequestMarshaller<OutputDataConfig, JsonMarshallerContext> 
+    public class ModelDataSourceMarshaller : IRequestMarshaller<ModelDataSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelDataSource requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCompressionType())
+            if(requestObject.IsSetS3DataSource())
             {
-                context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
-            }
+                context.Writer.WritePropertyName("S3DataSource");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetKmsKeyId())
-            {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
-            }
+                var marshaller = S3ModelDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3DataSource, context);
 
-            if(requestObject.IsSetS3OutputPath())
-            {
-                context.Writer.WritePropertyName("S3OutputPath");
-                context.Writer.Write(requestObject.S3OutputPath);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -68,7 +61,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutputDataConfigMarshaller Instance = new OutputDataConfigMarshaller();
+        public readonly static ModelDataSourceMarshaller Instance = new ModelDataSourceMarshaller();
 
     }
 }

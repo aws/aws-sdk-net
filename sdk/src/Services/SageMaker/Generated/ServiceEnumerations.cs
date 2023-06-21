@@ -7833,6 +7833,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ModelCompressionType.
+    /// </summary>
+    public class ModelCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gzip for ModelCompressionType
+        /// </summary>
+        public static readonly ModelCompressionType Gzip = new ModelCompressionType("Gzip");
+        /// <summary>
+        /// Constant None for ModelCompressionType
+        /// </summary>
+        public static readonly ModelCompressionType None = new ModelCompressionType("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelCompressionType FindValue(string value)
+        {
+            return FindValue<ModelCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelInfrastructureType.
     /// </summary>
     public class ModelInfrastructureType : ConstantClass
@@ -9382,6 +9432,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputCompressionType.
+    /// </summary>
+    public class OutputCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for OutputCompressionType
+        /// </summary>
+        public static readonly OutputCompressionType GZIP = new OutputCompressionType("GZIP");
+        /// <summary>
+        /// Constant NONE for OutputCompressionType
+        /// </summary>
+        public static readonly OutputCompressionType NONE = new OutputCompressionType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputCompressionType FindValue(string value)
+        {
+            return FindValue<OutputCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputCompressionType(string value)
         {
             return FindValue(value);
         }
@@ -12021,6 +12121,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type S3ModelDataType.
+    /// </summary>
+    public class S3ModelDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3Object for S3ModelDataType
+        /// </summary>
+        public static readonly S3ModelDataType S3Object = new S3ModelDataType("S3Object");
+        /// <summary>
+        /// Constant S3Prefix for S3ModelDataType
+        /// </summary>
+        public static readonly S3ModelDataType S3Prefix = new S3ModelDataType("S3Prefix");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3ModelDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3ModelDataType FindValue(string value)
+        {
+            return FindValue<S3ModelDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3ModelDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SagemakerServicecatalogStatus.
     /// </summary>
     public class SagemakerServicecatalogStatus : ConstantClass
@@ -14126,6 +14276,10 @@ namespace Amazon.SageMaker
         /// Constant MlTrn132xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlTrn132xlarge = new TrainingInstanceType("ml.trn1.32xlarge");
+        /// <summary>
+        /// Constant MlTrn1n32xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlTrn1n32xlarge = new TrainingInstanceType("ml.trn1n.32xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

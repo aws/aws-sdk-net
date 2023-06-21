@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAutoMLJobV2 operation.
-    /// Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-    /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+    /// Specifies the location of ML model data to deploy. If specified, you must specify
+    /// one and only one of the available data sources.
     /// </summary>
-    public partial class DescribeAutoMLJobV2Request : AmazonSageMakerRequest
+    public partial class ModelDataSource
     {
-        private string _autoMLJobName;
+        private S3ModelDataSource _s3DataSource;
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobName. 
+        /// Gets and sets the property S3DataSource. 
         /// <para>
-        /// Requests information about an AutoML job V2 using its unique name.
+        /// Specifies the S3 location of ML model data to deploy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string AutoMLJobName
+        [AWSProperty(Required=true)]
+        public S3ModelDataSource S3DataSource
         {
-            get { return this._autoMLJobName; }
-            set { this._autoMLJobName = value; }
+            get { return this._s3DataSource; }
+            set { this._s3DataSource = value; }
         }
 
-        // Check to see if AutoMLJobName property is set
-        internal bool IsSetAutoMLJobName()
+        // Check to see if S3DataSource property is set
+        internal bool IsSetS3DataSource()
         {
-            return this._autoMLJobName != null;
+            return this._s3DataSource != null;
         }
 
     }

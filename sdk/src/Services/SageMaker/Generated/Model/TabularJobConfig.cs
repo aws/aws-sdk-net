@@ -206,6 +206,13 @@ namespace Amazon.SageMaker.Model
         /// AutoML job V2. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
         /// Amazon SageMaker Autopilot problem types</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must either specify the type of supervised learning problem in <code>ProblemType</code>
+        /// and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+        /// metric, or none at all.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ProblemType ProblemType
         {

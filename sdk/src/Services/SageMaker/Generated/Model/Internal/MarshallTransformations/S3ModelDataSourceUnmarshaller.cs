@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputDataConfig Object
+    /// Response Unmarshaller for S3ModelDataSource Object
     /// </summary>  
-    public class OutputDataConfigUnmarshaller : IUnmarshaller<OutputDataConfig, XmlUnmarshallerContext>, IUnmarshaller<OutputDataConfig, JsonUnmarshallerContext>
+    public class S3ModelDataSourceUnmarshaller : IUnmarshaller<S3ModelDataSource, XmlUnmarshallerContext>, IUnmarshaller<S3ModelDataSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputDataConfig IUnmarshaller<OutputDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3ModelDataSource IUnmarshaller<S3ModelDataSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputDataConfig Unmarshall(JsonUnmarshallerContext context)
+        public S3ModelDataSource Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputDataConfig unmarshalledObject = new OutputDataConfig();
+            S3ModelDataSource unmarshalledObject = new S3ModelDataSource();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,16 +70,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompressionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("S3DataType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DataType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3OutputPath", targetDepth))
+                if (context.TestExpression("S3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3OutputPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputDataConfigUnmarshaller _instance = new OutputDataConfigUnmarshaller();        
+        private static S3ModelDataSourceUnmarshaller _instance = new S3ModelDataSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputDataConfigUnmarshaller Instance
+        public static S3ModelDataSourceUnmarshaller Instance
         {
             get
             {
