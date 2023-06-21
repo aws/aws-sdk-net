@@ -30,7 +30,7 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Use captions selectors to specify the captions data from your input that you use in
-    /// your outputs. You can use up to 20 captions selectors per input.
+    /// your outputs. You can use up to 100 captions selectors per input.
     /// </summary>
     public partial class CaptionSelector
     {

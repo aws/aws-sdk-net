@@ -35,6 +35,7 @@ namespace Amazon.MediaConvert.Model
     {
         private H265AdaptiveQuantization _adaptiveQuantization;
         private H265AlternateTransferFunctionSei _alternateTransferFunctionSei;
+        private BandwidthReductionFilter _bandwidthReductionFilter;
         private int? _bitrate;
         private H265CodecLevel _codecLevel;
         private H265CodecProfile _codecProfile;
@@ -113,6 +114,28 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAlternateTransferFunctionSei()
         {
             return this._alternateTransferFunctionSei != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BandwidthReductionFilter. The Bandwidth reduction filter
+        /// increases the video quality of your output relative to its bitrate. Use to lower the
+        /// bitrate of your constant quality QVBR output, with little or no perceptual decrease
+        /// in quality. Or, use to increase the video quality of outputs with other rate control
+        /// modes relative to the bitrate that you specify. Bandwidth reduction increases further
+        /// when your input is low quality or noisy. Outputs that use this feature incur pro-tier
+        /// pricing. When you include Bandwidth reduction filter, you cannot include the Noise
+        /// reducer preprocessor.
+        /// </summary>
+        public BandwidthReductionFilter BandwidthReductionFilter
+        {
+            get { return this._bandwidthReductionFilter; }
+            set { this._bandwidthReductionFilter = value; }
+        }
+
+        // Check to see if BandwidthReductionFilter property is set
+        internal bool IsSetBandwidthReductionFilter()
+        {
+            return this._bandwidthReductionFilter != null;
         }
 
         /// <summary>

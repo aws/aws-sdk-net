@@ -57,6 +57,7 @@ namespace Amazon.MediaConvert.Model
         private HlsOutputSelection _outputSelection;
         private HlsProgramDateTime _programDateTime;
         private int? _programDateTimePeriod;
+        private HlsProgressiveWriteHlsManifest _progressiveWriteHlsManifest;
         private HlsSegmentControl _segmentControl;
         private int? _segmentLength;
         private HlsSegmentLengthControl _segmentLengthControl;
@@ -458,6 +459,30 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProgramDateTimePeriod()
         {
             return this._programDateTimePeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgressiveWriteHlsManifest. Specify whether MediaConvert
+        /// generates HLS manifests while your job is running or when your job is complete. To
+        /// generate HLS manifests while your job is running: Choose Enabled. Use if you want
+        /// to play back your content as soon as it's available. MediaConvert writes the parent
+        /// and child manifests after the first three media segments are written to your destination
+        /// S3 bucket. It then writes new updated manifests after each additional segment is written.
+        /// The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+        /// and child manifests include the latest available media segment. When your job completes,
+        /// the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests
+        /// only when your job completes: Choose Disabled.
+        /// </summary>
+        public HlsProgressiveWriteHlsManifest ProgressiveWriteHlsManifest
+        {
+            get { return this._progressiveWriteHlsManifest; }
+            set { this._progressiveWriteHlsManifest = value; }
+        }
+
+        // Check to see if ProgressiveWriteHlsManifest property is set
+        internal bool IsSetProgressiveWriteHlsManifest()
+        {
+            return this._progressiveWriteHlsManifest != null;
         }
 
         /// <summary>

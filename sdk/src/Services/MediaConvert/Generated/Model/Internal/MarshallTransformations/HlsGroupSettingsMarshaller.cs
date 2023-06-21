@@ -217,6 +217,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ProgramDateTimePeriod);
             }
 
+            if(requestObject.IsSetProgressiveWriteHlsManifest())
+            {
+                context.Writer.WritePropertyName("progressiveWriteHlsManifest");
+                context.Writer.Write(requestObject.ProgressiveWriteHlsManifest);
+            }
+
             if(requestObject.IsSetSegmentControl())
             {
                 context.Writer.WritePropertyName("segmentControl");

@@ -133,8 +133,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property CaptionSelectors. Use captions selectors to specify the
-        /// captions data from your input that you use in your outputs. You can use up to 20 captions
-        /// selectors per input.
+        /// captions data from your input that you use in your outputs. You can use up to 100
+        /// captions selectors per input.
         /// </summary>
         public Dictionary<string, CaptionSelector> CaptionSelectors
         {
