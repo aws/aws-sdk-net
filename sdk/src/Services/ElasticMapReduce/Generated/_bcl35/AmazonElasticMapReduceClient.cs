@@ -2606,6 +2606,67 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  ListSupportedInstanceTypes
+
+        /// <summary>
+        /// A list of the instance types that Amazon EMR supports. You can filter the list by
+        /// Amazon Web Services Region and Amazon EMR release.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupportedInstanceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListSupportedInstanceTypes service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSupportedInstanceTypes">REST API Reference for ListSupportedInstanceTypes Operation</seealso>
+        public virtual ListSupportedInstanceTypesResponse ListSupportedInstanceTypes(ListSupportedInstanceTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupportedInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupportedInstanceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSupportedInstanceTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSupportedInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSupportedInstanceTypes operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSupportedInstanceTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSupportedInstanceTypes">REST API Reference for ListSupportedInstanceTypes Operation</seealso>
+        public virtual IAsyncResult BeginListSupportedInstanceTypes(ListSupportedInstanceTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupportedInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupportedInstanceTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSupportedInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSupportedInstanceTypes.</param>
+        /// 
+        /// <returns>Returns a  ListSupportedInstanceTypesResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSupportedInstanceTypes">REST API Reference for ListSupportedInstanceTypes Operation</seealso>
+        public virtual ListSupportedInstanceTypesResponse EndListSupportedInstanceTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSupportedInstanceTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyCluster
 
         /// <summary>
