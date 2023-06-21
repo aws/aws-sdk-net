@@ -49,6 +49,7 @@ namespace Amazon.Transfer.Model
         private string _securityPolicyName;
         private string _serverId;
         private State _state;
+        private List<string> _structuredLogDestinations = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private int? _userCount;
         private WorkflowDetails _workflowDetails;
@@ -482,6 +483,51 @@ namespace Amazon.Transfer.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StructuredLogDestinations. 
+        /// <para>
+        /// Specifies the log groups to which your server logs are sent.
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify a log group, you must provide the ARN for an existing log group. In this
+        /// case, the format of the log group is as follows:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have previously specified a log group for a server, you can clear it, and in
+        /// effect turn off structured logging, by providing an empty value for this parameter
+        /// in an <code>update-server</code> call. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> StructuredLogDestinations
+        {
+            get { return this._structuredLogDestinations; }
+            set { this._structuredLogDestinations = value; }
+        }
+
+        // Check to see if StructuredLogDestinations property is set
+        internal bool IsSetStructuredLogDestinations()
+        {
+            return this._structuredLogDestinations != null && this._structuredLogDestinations.Count > 0; 
         }
 
         /// <summary>
