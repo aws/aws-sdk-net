@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.7.572.0",
-    "CoreVersion"    : "3.7.107.8",
+    "ProductVersion" : "3.7.573.0",
+    "CoreVersion"    : "3.7.107.9",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
     "ServiceVersions"     : {
@@ -144,7 +144,7 @@
             "InPreview"               : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.7.103.23",
+            "Version" : "3.7.104.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.8"
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.7.119.10",
+            "Version" : "3.7.119.11",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.7.107.8"

@@ -1,3 +1,11 @@
+### 3.7.573.0 (2023-06-20 23:51 UTC)
+* DynamoDBv2 (3.7.104.0)
+	* Updated documentation for DynamoDB Streams. Add non-generic batchwrite methods on DynamoDBContext.
+* RDS (3.7.119.11)
+	* Add async version of RDSAuthTokenGenerator GenerateAuthToken.
+* Core 3.7.107.9
+	* Reduce empty array allocations by using Array.Empty<T>.
+
 ### 3.7.572.0 (2023-06-20 19:58 UTC)
 * Appflow (3.7.112.0)
 	* This release adds new API to reset connector metadata cache
