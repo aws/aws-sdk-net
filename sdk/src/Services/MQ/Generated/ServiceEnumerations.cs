@@ -101,6 +101,10 @@ namespace Amazon.MQ
         /// </summary>
         public static readonly BrokerState REBOOT_IN_PROGRESS = new BrokerState("REBOOT_IN_PROGRESS");
         /// <summary>
+        /// Constant REPLICA for BrokerState
+        /// </summary>
+        public static readonly BrokerState REPLICA = new BrokerState("REPLICA");
+        /// <summary>
         /// Constant RUNNING for BrokerState
         /// </summary>
         public static readonly BrokerState RUNNING = new BrokerState("RUNNING");
@@ -238,6 +242,56 @@ namespace Amazon.MQ
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataReplicationMode.
+    /// </summary>
+    public class DataReplicationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRDR for DataReplicationMode
+        /// </summary>
+        public static readonly DataReplicationMode CRDR = new DataReplicationMode("CRDR");
+        /// <summary>
+        /// Constant NONE for DataReplicationMode
+        /// </summary>
+        public static readonly DataReplicationMode NONE = new DataReplicationMode("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataReplicationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataReplicationMode FindValue(string value)
+        {
+            return FindValue<DataReplicationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataReplicationMode(string value)
         {
             return FindValue(value);
         }
@@ -412,6 +466,56 @@ namespace Amazon.MQ
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EngineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PromoteMode.
+    /// </summary>
+    public class PromoteMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILOVER for PromoteMode
+        /// </summary>
+        public static readonly PromoteMode FAILOVER = new PromoteMode("FAILOVER");
+        /// <summary>
+        /// Constant SWITCHOVER for PromoteMode
+        /// </summary>
+        public static readonly PromoteMode SWITCHOVER = new PromoteMode("SWITCHOVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PromoteMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PromoteMode FindValue(string value)
+        {
+            return FindValue<PromoteMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PromoteMode(string value)
         {
             return FindValue(value);
         }

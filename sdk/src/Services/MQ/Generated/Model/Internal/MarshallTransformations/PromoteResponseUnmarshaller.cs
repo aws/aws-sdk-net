@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeUser operation
+    /// Response Unmarshaller for Promote operation
     /// </summary>  
-    public class DescribeUserResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PromoteResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeUserResponse response = new DescribeUserResponse();
+            PromoteResponse response = new PromoteResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -55,36 +55,6 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BrokerId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("consoleAccess", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ConsoleAccess = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("groups", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Groups = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("pending", targetDepth))
-                {
-                    var unmarshaller = UserPendingChangesUnmarshaller.Instance;
-                    response.Pending = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationUser", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ReplicationUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Username = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -130,9 +100,9 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             return new AmazonMQException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeUserResponseUnmarshaller _instance = new DescribeUserResponseUnmarshaller();        
+        private static PromoteResponseUnmarshaller _instance = new PromoteResponseUnmarshaller();        
 
-        internal static DescribeUserResponseUnmarshaller GetInstance()
+        internal static PromoteResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -140,7 +110,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeUserResponseUnmarshaller Instance
+        public static PromoteResponseUnmarshaller Instance
         {
             get
             {

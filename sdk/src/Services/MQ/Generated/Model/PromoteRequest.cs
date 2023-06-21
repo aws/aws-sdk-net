@@ -29,48 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// A list of information about the configuration.
+    /// Container for the parameters to the Promote operation.
+    /// Promotes a data replication replica broker to the primary broker role.
     /// </summary>
-    public partial class ConfigurationId
+    public partial class PromoteRequest : AmazonMQRequest
     {
-        private string _id;
-        private int? _revision;
+        private string _brokerId;
+        private PromoteMode _mode;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property BrokerId. 
         /// <para>
-        /// Required. The unique ID that Amazon MQ generates for the configuration.
+        /// The unique ID that Amazon MQ generates for the broker.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Id
+        public string BrokerId
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._brokerId; }
+            set { this._brokerId = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if BrokerId property is set
+        internal bool IsSetBrokerId()
         {
-            return this._id != null;
+            return this._brokerId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Revision. 
+        /// Gets and sets the property Mode. 
         /// <para>
-        /// The revision number of the configuration.
+        /// The Promote mode requested. Note: Valid values for the parameter are SWITCHOVER, FAILOVER.
         /// </para>
         /// </summary>
-        public int Revision
+        [AWSProperty(Required=true)]
+        public PromoteMode Mode
         {
-            get { return this._revision.GetValueOrDefault(); }
-            set { this._revision = value; }
+            get { return this._mode; }
+            set { this._mode = value; }
         }
 
-        // Check to see if Revision property is set
-        internal bool IsSetRevision()
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
         {
-            return this._revision.HasValue; 
+            return this._mode != null;
         }
 
     }

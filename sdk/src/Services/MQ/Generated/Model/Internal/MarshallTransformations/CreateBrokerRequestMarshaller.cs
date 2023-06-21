@@ -105,6 +105,18 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("creatorRequestId");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetDataReplicationMode())
+                {
+                    context.Writer.WritePropertyName("dataReplicationMode");
+                    context.Writer.Write(publicRequest.DataReplicationMode);
+                }
+
+                if(publicRequest.IsSetDataReplicationPrimaryBrokerArn())
+                {
+                    context.Writer.WritePropertyName("dataReplicationPrimaryBrokerArn");
+                    context.Writer.Write(publicRequest.DataReplicationPrimaryBrokerArn);
+                }
+
                 if(publicRequest.IsSetDeploymentMode())
                 {
                     context.Writer.WritePropertyName("deploymentMode");

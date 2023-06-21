@@ -31,6 +31,15 @@ namespace Amazon.MQ.Model
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
     /// Creates an ActiveMQ user.
+    /// 
+    ///  <important>
+    /// <para>
+    /// Do not add personally identifiable information (PII) or other confidential or sensitive
+    /// information in broker usernames. Broker usernames are accessible to other Amazon Web
+    /// Services services, including CloudWatch Logs. Broker usernames are not intended to
+    /// be used for private or sensitive data.
+    /// </para>
+    /// </important>
     /// </summary>
     public partial class CreateUserRequest : AmazonMQRequest
     {
@@ -38,6 +47,7 @@ namespace Amazon.MQ.Model
         private bool? _consoleAccess;
         private List<string> _groups = new List<string>();
         private string _password;
+        private bool? _replicationUser;
         private string _username;
 
         /// <summary>
@@ -116,6 +126,24 @@ namespace Amazon.MQ.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationUser. 
+        /// <para>
+        /// Defines if this user is intended for CRDR replication purposes.
+        /// </para>
+        /// </summary>
+        public bool ReplicationUser
+        {
+            get { return this._replicationUser.GetValueOrDefault(); }
+            set { this._replicationUser = value; }
+        }
+
+        // Check to see if ReplicationUser property is set
+        internal bool IsSetReplicationUser()
+        {
+            return this._replicationUser.HasValue; 
         }
 
         /// <summary>

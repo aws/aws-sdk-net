@@ -118,7 +118,7 @@ namespace Amazon.MQ
         /// </li></ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
-        /// an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+        /// an IAM User and Get Your Amazon Web Services Credentials</a> and <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
         /// Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer
         /// Guide</i>.
         /// </para>
@@ -282,6 +282,15 @@ namespace Amazon.MQ
 
         /// <summary>
         /// Creates an ActiveMQ user.
+        /// 
+        ///  <important>
+        /// <para>
+        /// Do not add personally identifiable information (PII) or other confidential or sensitive
+        /// information in broker usernames. Broker usernames are accessible to other Amazon Web
+        /// Services services, including CloudWatch Logs. Broker usernames are not intended to
+        /// be used for private or sensitive data.
+        /// </para>
+        /// </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 
@@ -1045,6 +1054,58 @@ namespace Amazon.MQ
         /// <returns>Returns a  ListUsersResult from MQ.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse EndListUsers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  Promote
+
+
+        /// <summary>
+        /// Promotes a data replication replica broker to the primary broker role.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Promote service method.</param>
+        /// 
+        /// <returns>The response from the Promote service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">REST API Reference for Promote Operation</seealso>
+        PromoteResponse Promote(PromoteRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Promote operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Promote operation on AmazonMQClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPromote
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">REST API Reference for Promote Operation</seealso>
+        IAsyncResult BeginPromote(PromoteRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  Promote operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPromote.</param>
+        /// 
+        /// <returns>Returns a  PromoteResult from MQ.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote">REST API Reference for Promote Operation</seealso>
+        PromoteResponse EndPromote(IAsyncResult asyncResult);
 
         #endregion
         

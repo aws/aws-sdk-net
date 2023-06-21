@@ -48,8 +48,8 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Hosts. 
         /// <para>
-        /// Specifies the location of the LDAP server such as AWS Directory Service for Microsoft
-        /// Active Directory . Optional failover server.
+        /// Specifies the location of the LDAP server such as Directory Service for Microsoft
+        /// Active Directory. Optional failover server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

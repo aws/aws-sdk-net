@@ -43,6 +43,8 @@ namespace Amazon.MQ.Model
         private BrokerState _brokerState;
         private Configurations _configurations;
         private DateTime? _created;
+        private DataReplicationMetadataOutput _dataReplicationMetadata;
+        private DataReplicationMode _dataReplicationMode;
         private DeploymentMode _deploymentMode;
         private EncryptionOptions _encryptionOptions;
         private EngineType _engineType;
@@ -52,6 +54,8 @@ namespace Amazon.MQ.Model
         private LogsSummary _logs;
         private WeeklyStartTime _maintenanceWindowStartTime;
         private AuthenticationStrategy _pendingAuthenticationStrategy;
+        private DataReplicationMetadataOutput _pendingDataReplicationMetadata;
+        private DataReplicationMode _pendingDataReplicationMode;
         private string _pendingEngineVersion;
         private string _pendingHostInstanceType;
         private LdapServerMetadataOutput _pendingLdapServerMetadata;
@@ -66,7 +70,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property ActionsRequired. 
         /// <para>
-        /// A list of actions required for a broker.
+        /// Actions required for a broker.
         /// </para>
         /// </summary>
         public List<ActionRequired> ActionsRequired
@@ -176,9 +180,9 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property BrokerName. 
         /// <para>
-        /// The broker's name. This value must be unique in your AWS account, 1-50 characters
-        /// long, must contain only letters, numbers, dashes, and underscores, and must not contain
-        /// white spaces, brackets, wildcard characters, or special characters.
+        /// The broker's name. This value must be unique in your Amazon Web Services account account,
+        /// 1-50 characters long, must contain only letters, numbers, dashes, and underscores,
+        /// and must not contain white spaces, brackets, wildcard characters, or special characters.
         /// </para>
         /// </summary>
         public string BrokerName
@@ -248,6 +252,43 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataReplicationMetadata. 
+        /// <para>
+        /// The replication details of the data replication-enabled broker. Only returned if dataReplicationMode
+        /// is set to CRDR.
+        /// </para>
+        /// </summary>
+        public DataReplicationMetadataOutput DataReplicationMetadata
+        {
+            get { return this._dataReplicationMetadata; }
+            set { this._dataReplicationMetadata = value; }
+        }
+
+        // Check to see if DataReplicationMetadata property is set
+        internal bool IsSetDataReplicationMetadata()
+        {
+            return this._dataReplicationMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationMode. 
+        /// <para>
+        /// Describes whether this broker is a part of a data replication pair.
+        /// </para>
+        /// </summary>
+        public DataReplicationMode DataReplicationMode
+        {
+            get { return this._dataReplicationMode; }
+            set { this._dataReplicationMode = value; }
+        }
+
+        // Check to see if DataReplicationMode property is set
+        internal bool IsSetDataReplicationMode()
+        {
+            return this._dataReplicationMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentMode. 
         /// <para>
         /// The broker's deployment mode.
@@ -268,7 +309,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property EncryptionOptions. 
         /// <para>
-        /// Encryption options for the broker. Does not apply to RabbitMQ brokers.
+        /// Encryption options for the broker.
         /// </para>
         /// </summary>
         public EncryptionOptions EncryptionOptions
@@ -411,6 +452,43 @@ namespace Amazon.MQ.Model
         internal bool IsSetPendingAuthenticationStrategy()
         {
             return this._pendingAuthenticationStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingDataReplicationMetadata. 
+        /// <para>
+        /// The pending replication details of the data replication-enabled broker. Only returned
+        /// if pendingDataReplicationMode is set to CRDR.
+        /// </para>
+        /// </summary>
+        public DataReplicationMetadataOutput PendingDataReplicationMetadata
+        {
+            get { return this._pendingDataReplicationMetadata; }
+            set { this._pendingDataReplicationMetadata = value; }
+        }
+
+        // Check to see if PendingDataReplicationMetadata property is set
+        internal bool IsSetPendingDataReplicationMetadata()
+        {
+            return this._pendingDataReplicationMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingDataReplicationMode. 
+        /// <para>
+        /// Describes whether this broker will be a part of a data replication pair after reboot.
+        /// </para>
+        /// </summary>
+        public DataReplicationMode PendingDataReplicationMode
+        {
+            get { return this._pendingDataReplicationMode; }
+            set { this._pendingDataReplicationMode = value; }
+        }
+
+        // Check to see if PendingDataReplicationMode property is set
+        internal bool IsSetPendingDataReplicationMode()
+        {
+            return this._pendingDataReplicationMode != null;
         }
 
         /// <summary>

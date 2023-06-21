@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateUser Request Marshaller
+    /// Promote Request Marshaller
     /// </summary>       
-    public class CreateUserRequestMarshaller : IMarshaller<IRequest, CreateUserRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PromoteRequestMarshaller : IMarshaller<IRequest, PromoteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateUserRequest)input);
+            return this.Marshall((PromoteRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateUserRequest publicRequest)
+        public IRequest Marshall(PromoteRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
             request.Headers["Content-Type"] = "application/json";
@@ -62,42 +62,16 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetBrokerId())
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
             request.AddPathResource("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
-            if (!publicRequest.IsSetUsername())
-                throw new AmazonMQException("Request object does not have required field Username set");
-            request.AddPathResource("{username}", StringUtils.FromString(publicRequest.Username));
-            request.ResourcePath = "/v1/brokers/{broker-id}/users/{username}";
+            request.ResourcePath = "/v1/brokers/{broker-id}/promote";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConsoleAccess())
+                if(publicRequest.IsSetMode())
                 {
-                    context.Writer.WritePropertyName("consoleAccess");
-                    context.Writer.Write(publicRequest.ConsoleAccess);
-                }
-
-                if(publicRequest.IsSetGroups())
-                {
-                    context.Writer.WritePropertyName("groups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGroupsListValue in publicRequest.Groups)
-                    {
-                            context.Writer.Write(publicRequestGroupsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetPassword())
-                {
-                    context.Writer.WritePropertyName("password");
-                    context.Writer.Write(publicRequest.Password);
-                }
-
-                if(publicRequest.IsSetReplicationUser())
-                {
-                    context.Writer.WritePropertyName("replicationUser");
-                    context.Writer.Write(publicRequest.ReplicationUser);
+                    context.Writer.WritePropertyName("mode");
+                    context.Writer.Write(publicRequest.Mode);
                 }
 
                 writer.WriteObjectEnd();
@@ -108,9 +82,9 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateUserRequestMarshaller _instance = new CreateUserRequestMarshaller();        
+        private static PromoteRequestMarshaller _instance = new PromoteRequestMarshaller();        
 
-        internal static CreateUserRequestMarshaller GetInstance()
+        internal static PromoteRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +92,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateUserRequestMarshaller Instance
+        public static PromoteRequestMarshaller Instance
         {
             get
             {

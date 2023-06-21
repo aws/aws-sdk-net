@@ -97,7 +97,7 @@ namespace Amazon.MQ.Model
     /// </li></ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create
-    /// an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
+    /// an IAM User and Get Your Amazon Web Services Credentials</a> and <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never
     /// Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer
     /// Guide</i>.
     /// </para>
@@ -109,6 +109,8 @@ namespace Amazon.MQ.Model
         private string _brokerName;
         private ConfigurationId _configuration;
         private string _creatorRequestId;
+        private DataReplicationMode _dataReplicationMode;
+        private string _dataReplicationPrimaryBrokerArn;
         private DeploymentMode _deploymentMode;
         private EncryptionOptions _encryptionOptions;
         private EngineType _engineType;
@@ -167,10 +169,18 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property BrokerName. 
         /// <para>
-        /// Required. The broker's name. This value must be unique in your AWS account, 1-50 characters
-        /// long, must contain only letters, numbers, dashes, and underscores, and must not contain
-        /// white spaces, brackets, wildcard characters, or special characters.
+        /// Required. The broker's name. This value must be unique in your Amazon Web Services
+        /// account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores,
+        /// and must not contain white spaces, brackets, wildcard characters, or special characters.
         /// </para>
+        ///  <important>
+        /// <para>
+        /// Do not add personally identifiable information (PII) or other confidential or sensitive
+        /// information in broker names. Broker names are accessible to other Amazon Web Services
+        /// services, including CloudWatch Logs. Broker names are not intended to be used for
+        /// private or sensitive data.
+        /// </para>
+        /// </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public string BrokerName
@@ -207,10 +217,14 @@ namespace Amazon.MQ.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// The unique ID that the requester receives for the created broker. Amazon MQ passes
-        /// your ID with the API action. Note: We recommend using a Universally Unique Identifier
-        /// (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application
-        /// doesn't require idempotency.
+        /// your ID with the API action.
         /// </para>
+        ///  <note>
+        /// <para>
+        /// We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId.
+        /// You may omit the creatorRequestId if your application doesn't require idempotency.
+        /// </para>
+        /// </note>
         /// </summary>
         public string CreatorRequestId
         {
@@ -222,6 +236,44 @@ namespace Amazon.MQ.Model
         internal bool IsSetCreatorRequestId()
         {
             return this._creatorRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationMode. 
+        /// <para>
+        /// Defines whether this broker is a part of a data replication pair.
+        /// </para>
+        /// </summary>
+        public DataReplicationMode DataReplicationMode
+        {
+            get { return this._dataReplicationMode; }
+            set { this._dataReplicationMode = value; }
+        }
+
+        // Check to see if DataReplicationMode property is set
+        internal bool IsSetDataReplicationMode()
+        {
+            return this._dataReplicationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataReplicationPrimaryBrokerArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the primary broker that is used to replicate data
+        /// from in a data replication pair, and is applied to the replica broker. Must be set
+        /// when dataReplicationMode is set to CRDR.
+        /// </para>
+        /// </summary>
+        public string DataReplicationPrimaryBrokerArn
+        {
+            get { return this._dataReplicationPrimaryBrokerArn; }
+            set { this._dataReplicationPrimaryBrokerArn = value; }
+        }
+
+        // Check to see if DataReplicationPrimaryBrokerArn property is set
+        internal bool IsSetDataReplicationPrimaryBrokerArn()
+        {
+            return this._dataReplicationPrimaryBrokerArn != null;
         }
 
         /// <summary>
@@ -246,7 +298,7 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property EncryptionOptions. 
         /// <para>
-        /// Encryption options for the broker. Does not apply to RabbitMQ brokers.
+        /// Encryption options for the broker.
         /// </para>
         /// </summary>
         public EncryptionOptions EncryptionOptions
@@ -447,8 +499,8 @@ namespace Amazon.MQ.Model
         /// <para>
         /// If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
         /// VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong
-        /// must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints
-        /// in VPCs that are not owned by your AWS account.
+        /// must be owned by your Amazon Web Services account. Amazon MQ will not be able to create
+        /// VPC endpoints in VPCs that are not owned by your Amazon Web Services account.
         /// </para>
         /// </important>
         /// </summary>
@@ -485,18 +537,11 @@ namespace Amazon.MQ.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        /// Required. The list of broker users (persons or applications) who can access queues
-        /// and topics. This value can contain only alphanumeric characters, dashes, periods,
-        /// underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// The list of broker users (persons or applications) who can access queues and topics.
+        /// For Amazon MQ for RabbitMQ brokers, one and only one administrative user is accepted
+        /// and created when a broker is first provisioned. All subsequent broker users are created
+        /// by making RabbitMQ API calls directly to brokers or via the RabbitMQ web console.
         /// </para>
-        ///  <important><title>Amazon MQ for RabbitMQ</title> 
-        /// <para>
-        /// When you create an Amazon MQ for RabbitMQ broker, one and only one administrative
-        /// user is accepted and created when a broker is first provisioned. All subsequent broker
-        /// users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ
-        /// web console.
-        /// </para>
-        /// </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<User> Users

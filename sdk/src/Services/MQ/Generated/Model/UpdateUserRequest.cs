@@ -38,6 +38,7 @@ namespace Amazon.MQ.Model
         private bool? _consoleAccess;
         private List<string> _groups = new List<string>();
         private string _password;
+        private bool? _replicationUser;
         private string _username;
 
         /// <summary>
@@ -115,6 +116,24 @@ namespace Amazon.MQ.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationUser. 
+        /// <para>
+        /// Defines whether the user is intended for data replication.
+        /// </para>
+        /// </summary>
+        public bool ReplicationUser
+        {
+            get { return this._replicationUser.GetValueOrDefault(); }
+            set { this._replicationUser = value; }
+        }
+
+        // Check to see if ReplicationUser property is set
+        internal bool IsSetReplicationUser()
+        {
+            return this._replicationUser.HasValue; 
         }
 
         /// <summary>
