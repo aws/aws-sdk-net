@@ -104,6 +104,10 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
+        /// The default format is CSV.
+        /// </para>
+        ///  
+        /// <para>
         /// The format must match the format of the file stored in the S3 bucket identified in
         /// the <code>S3Path</code> parameter.
         /// </para>

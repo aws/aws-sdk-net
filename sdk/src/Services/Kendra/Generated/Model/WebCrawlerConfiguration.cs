@@ -76,18 +76,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlDepth. 
         /// <para>
-        /// Specifies the number of levels in a website that you want to crawl.
-        /// </para>
-        ///  
-        /// <para>
-        /// The first level begins from the website seed or starting point URL. For example, if
-        /// a website has three levels—index level (the seed in this example), sections level,
-        /// and subsections level—and you are only interested in crawling information up to the
-        /// sections level (levels 0-1), you can set your depth to 1.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default crawl depth is set to 2.
+        /// The 'depth' or number of levels from the seed level to crawl. For example, the seed
+        /// URL page is depth 1 and any hyperlinks on this page that are also crawled are depth
+        /// 2.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -227,7 +218,7 @@ namespace Amazon.Kendra.Model
         /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> UrlExclusionPatterns
         {
             get { return this._urlExclusionPatterns; }
@@ -249,7 +240,7 @@ namespace Amazon.Kendra.Model
         /// the exclusion pattern takes precedence and the URL file isn't included in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> UrlInclusionPatterns
         {
             get { return this._urlInclusionPatterns; }

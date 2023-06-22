@@ -57,7 +57,14 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Provides the configuration information to connect to Alfresco as your data source.
         /// </para>
+        ///  
+        /// <para>
+        /// Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating
+        /// to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+        /// API.
+        /// </para>
         /// </summary>
+        [Obsolete("Deprecated AlfrescoConfiguration in favor of TemplateConfiguration")]
         public AlfrescoConfiguration AlfrescoConfiguration
         {
             get { return this._alfrescoConfiguration; }

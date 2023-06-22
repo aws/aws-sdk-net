@@ -74,19 +74,19 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HOST_ONLY</code> – crawl only the website host names. For example, if the seed
+        ///  <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed
         /// URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBDOMAINS</code> – crawl the website host names with subdomains. For example,
+        ///  <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example,
         /// if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com"
         /// are also crawled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-        /// domains that the web pages link to.
+        ///  <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains
+        /// that the web pages link to.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -102,18 +102,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExcludeAttachmentFilePatterns. 
         /// <para>
-        /// A list of regular expression patterns to exclude certain attachments of knowledge
-        /// articles in your ServiceNow. Item that match the patterns are excluded from the index.
-        /// Items that don't match the patterns are included in the index. If an item matches
-        /// both an inclusion and exclusion pattern, the exclusion pattern takes precedence and
-        /// the item isn't included in the index.
-        /// </para>
-        ///  
-        /// <para>
-        /// The regex is applied to the field specified in the <code>PatternTargetField</code>.
+        /// A list of regular expression patterns applied to exclude certain knowledge article
+        /// attachments. Attachments that match the patterns are excluded from the index. Items
+        /// that don't match the patterns are included in the index. If an item matches both an
+        /// inclusion and exclusion pattern, the exclusion pattern takes precedence and the item
+        /// isn't included in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExcludeAttachmentFilePatterns
         {
             get { return this._excludeAttachmentFilePatterns; }
@@ -178,18 +174,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeAttachmentFilePatterns. 
         /// <para>
-        /// A list of regular expression patterns to include certain attachments of knowledge
-        /// articles in your ServiceNow. Item that match the patterns are included in the index.
-        /// Items that don't match the patterns are excluded from the index. If an item matches
-        /// both an inclusion and exclusion pattern, the exclusion pattern takes precedence and
-        /// the item isn't included in the index.
-        /// </para>
-        ///  
-        /// <para>
-        /// The regex is applied to the field specified in the <code>PatternTargetField</code>.
+        /// A list of regular expression patterns applied to include knowledge article attachments.
+        /// Attachments that match the patterns are included in the index. Items that don't match
+        /// the patterns are excluded from the index. If an item matches both an inclusion and
+        /// exclusion pattern, the exclusion pattern takes precedence and the item isn't included
+        /// in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> IncludeAttachmentFilePatterns
         {
             get { return this._includeAttachmentFilePatterns; }

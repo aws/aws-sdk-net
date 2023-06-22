@@ -1195,11 +1195,6 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Kendra.Model.QueryRequest.QueryText</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Kendra.Model.QueryRequest.VisitorId</property>
     <min>1</min>
     <max>256</max>
@@ -1207,6 +1202,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.QueryResponse.QueryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.RetrieveRequest.IndexId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.RetrieveResponse.QueryId</property>
     <min>1</min>
     <max>36</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]*</pattern>
@@ -1620,11 +1627,6 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Kendra.Model.ConflictingItem.QueryText</property>
-    <min>1</min>
-    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.ConflictingItem.SetId</property>
@@ -2349,6 +2351,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.RelevanceFeedback.ResultId</property>
+    <min>1</min>
+    <max>73</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.RetrieveResultItem.DocumentId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.RetrieveResultItem.DocumentURI</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.RetrieveResultItem.Id</property>
     <min>1</min>
     <max>73</max>
   </property-value-rule>

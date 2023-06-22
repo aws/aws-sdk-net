@@ -29,57 +29,53 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Container for the parameters to the Query operation.
-    /// Searches an index given an input query.
+    /// Container for the parameters to the Retrieve operation.
+    /// Retrieves relevant passages or text excerpts given an input query.
     /// 
     ///  
     /// <para>
-    /// You can configure boosting or relevance tuning at the query level to override boosting
-    /// at the index level, filter based on document fields/attributes and faceted search,
-    /// and filter based on the user or their group access to documents. You can also include
-    /// certain fields in the response that might provide useful additional information.
+    /// This API is similar to the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Query.html">Query</a>
+    /// API. However, by default, the <code>Query</code> API only returns excerpt passages
+    /// of up to 100 token words. With the <code>Retrieve</code> API, you can retrieve longer
+    /// passages of up to 200 token words and up to 100 semantically relevant passages. This
+    /// doesn't include question-answer or FAQ type responses from your index. The passages
+    /// are text excerpts that can be semantically extracted from multiple documents and multiple
+    /// parts of the same document. If in extreme cases your documents produce no relevant
+    /// passages using the <code>Retrieve</code> API, you can alternatively use the <code>Query</code>
+    /// API.
     /// </para>
     ///  
     /// <para>
-    /// A query response contains three types of results.
+    /// You can also do the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Relevant suggested answers. The answers can be either a text excerpt or table excerpt.
-    /// The answer can be highlighted in the excerpt.
+    /// Override boosting at the index level
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Matching FAQs or questions-answer from your FAQ file.
+    /// Filter based on document fields or attributes
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Relevant documents. This result type includes an excerpt of the document with the
-    /// document title. The searched terms can be highlighted in the excerpt.
+    /// Filter based on the user or their group access to documents
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code>
-    /// parameter. Each query returns the 100 most relevant results. If you filter result
-    /// type to only question-answers, a maximum of four results are returned. If you filter
-    /// result type to only answers, a maximum of three results are returned.
+    /// You can also include certain fields in the response that might provide useful additional
+    /// information.
     /// </para>
     /// </summary>
-    public partial class QueryRequest : AmazonKendraRequest
+    public partial class RetrieveRequest : AmazonKendraRequest
     {
         private AttributeFilter _attributeFilter;
         private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = new List<DocumentRelevanceConfiguration>();
-        private List<Facet> _facets = new List<Facet>();
         private string _indexId;
         private int? _pageNumber;
         private int? _pageSize;
-        private QueryResultType _queryResultTypeFilter;
         private string _queryText;
         private List<string> _requestedDocumentAttributes = new List<string>();
-        private SortingConfiguration _sortingConfiguration;
-        private SpellCorrectionConfiguration _spellCorrectionConfiguration;
         private UserContext _userContext;
-        private string _visitorId;
 
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
@@ -138,28 +134,9 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Facets. 
-        /// <para>
-        /// An array of documents fields/attributes for faceted search. Amazon Kendra returns
-        /// a count for each field key specified. This helps your users narrow their search.
-        /// </para>
-        /// </summary>
-        public List<Facet> Facets
-        {
-            get { return this._facets; }
-            set { this._facets = value; }
-        }
-
-        // Check to see if Facets property is set
-        internal bool IsSetFacets()
-        {
-            return this._facets != null && this._facets.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index for the search.
+        /// The identifier of the index to retrieve relevant passages for the search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -178,9 +155,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property PageNumber. 
         /// <para>
-        /// Query results are returned in pages the size of the <code>PageSize</code> parameter.
-        /// By default, Amazon Kendra returns the first page of results. Use this parameter to
-        /// get result pages after the first one.
+        /// Retrieved relevant passages are returned in pages the size of the <code>PageSize</code>
+        /// parameter. By default, Amazon Kendra returns the first page of results. Use this parameter
+        /// to get result pages after the first one.
         /// </para>
         /// </summary>
         public int PageNumber
@@ -198,9 +175,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// Sets the number of results that are returned in each page of results. The default
-        /// page size is 10. The maximum number of results returned is 100. If you ask for more
-        /// than 100 results, only 100 are returned.
+        /// Sets the number of retrieved relevant passages that are returned in each page of results.
+        /// The default page size is 10. The maximum number of results returned is 100. If you
+        /// ask for more than 100 results, only 100 are returned.
         /// </para>
         /// </summary>
         public int PageSize
@@ -216,32 +193,14 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryResultTypeFilter. 
-        /// <para>
-        /// Sets the type of query result or response. Only results for the specified type are
-        /// returned.
-        /// </para>
-        /// </summary>
-        public QueryResultType QueryResultTypeFilter
-        {
-            get { return this._queryResultTypeFilter; }
-            set { this._queryResultTypeFilter = value; }
-        }
-
-        // Check to see if QueryResultTypeFilter property is set
-        internal bool IsSetQueryResultTypeFilter()
-        {
-            return this._queryResultTypeFilter != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property QueryText. 
         /// <para>
-        /// The input query text for the search. Amazon Kendra truncates queries at 30 token words,
-        /// which excludes punctuation and stop words. Truncation still applies if you use Boolean
-        /// or more advanced, complex queries. 
+        /// The input query text to retrieve relevant passages for the search. Amazon Kendra truncates
+        /// queries at 30 token words, which excludes punctuation and stop words. Truncation still
+        /// applies if you use Boolean or more advanced, complex queries.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string QueryText
         {
             get { return this._queryText; }
@@ -257,9 +216,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RequestedDocumentAttributes. 
         /// <para>
-        /// An array of document fields/attributes to include in the response. You can limit the
-        /// response to include certain document fields. By default, all document attributes are
-        /// included in the response.
+        /// A list of document fields/attributes to include in the response. You can limit the
+        /// response to include certain document fields. By default, all document fields are included
+        /// in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -273,50 +232,6 @@ namespace Amazon.Kendra.Model
         internal bool IsSetRequestedDocumentAttributes()
         {
             return this._requestedDocumentAttributes != null && this._requestedDocumentAttributes.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SortingConfiguration. 
-        /// <para>
-        /// Provides information that determines how the results of the query are sorted. You
-        /// can set the field that Amazon Kendra should sort the results on, and specify whether
-        /// the results should be sorted in ascending or descending order. In the case of ties
-        /// in sorting the results, the results are sorted by relevance.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't provide sorting configuration, the results are sorted by the relevance
-        /// that Amazon Kendra determines for the result.
-        /// </para>
-        /// </summary>
-        public SortingConfiguration SortingConfiguration
-        {
-            get { return this._sortingConfiguration; }
-            set { this._sortingConfiguration = value; }
-        }
-
-        // Check to see if SortingConfiguration property is set
-        internal bool IsSetSortingConfiguration()
-        {
-            return this._sortingConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SpellCorrectionConfiguration. 
-        /// <para>
-        /// Enables suggested spell corrections for queries.
-        /// </para>
-        /// </summary>
-        public SpellCorrectionConfiguration SpellCorrectionConfiguration
-        {
-            get { return this._spellCorrectionConfiguration; }
-            set { this._spellCorrectionConfiguration = value; }
-        }
-
-        // Check to see if SpellCorrectionConfiguration property is set
-        internal bool IsSetSpellCorrectionConfiguration()
-        {
-            return this._spellCorrectionConfiguration != null;
         }
 
         /// <summary>
@@ -335,27 +250,6 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUserContext()
         {
             return this._userContext != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VisitorId. 
-        /// <para>
-        /// Provides an identifier for a specific user. The <code>VisitorId</code> should be a
-        /// unique identifier, such as a GUID. Don't use personally identifiable information,
-        /// such as the user's email address, as the <code>VisitorId</code>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string VisitorId
-        {
-            get { return this._visitorId; }
-            set { this._visitorId = value; }
-        }
-
-        // Check to see if VisitorId property is set
-        internal bool IsSetVisitorId()
-        {
-            return this._visitorId != null;
         }
 
     }

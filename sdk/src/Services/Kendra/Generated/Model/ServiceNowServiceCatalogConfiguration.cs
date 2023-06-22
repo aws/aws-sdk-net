@@ -112,7 +112,7 @@ namespace Amazon.Kendra.Model
         /// The regex is applied to the file name of the attachment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExcludeAttachmentFilePatterns
         {
             get { return this._excludeAttachmentFilePatterns; }
@@ -162,7 +162,7 @@ namespace Amazon.Kendra.Model
         /// The regex is applied to the file name of the attachment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> IncludeAttachmentFilePatterns
         {
             get { return this._includeAttachmentFilePatterns; }

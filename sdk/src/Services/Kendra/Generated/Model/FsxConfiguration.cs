@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         /// in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
         {
             get { return this._exclusionPatterns; }
@@ -143,7 +143,7 @@ namespace Amazon.Kendra.Model
         /// in the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
         {
             get { return this._inclusionPatterns; }
