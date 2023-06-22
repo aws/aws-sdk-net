@@ -1,3 +1,13 @@
+### 3.7.575.0 (2023-06-22 18:21 UTC)
+* ChimeSDKIdentity (3.7.102.0)
+	* AppInstanceBots can be configured to be invoked or not using the Target or the CHIME.mentions attribute for ChannelMessages
+* ChimeSDKMessaging (3.7.104.0)
+	* ChannelMessages can be made visible to sender and intended recipient rather than all channel members with the target attribute. For example, a user can send messages to a bot and receive messages back in a group channel without other members seeing them.
+* Kendra (3.7.105.0)
+	* Introducing Amazon Kendra Retrieve API that can be used to retrieve relevant passages or text excerpts given an input query.
+* StepFunctions (3.7.103.0)
+	* Adds support for Versions and Aliases. Adds 8 operations: PublishStateMachineVersion, DeleteStateMachineVersion, ListStateMachineVersions, CreateStateMachineAlias, DescribeStateMachineAlias, UpdateStateMachineAlias, DeleteStateMachineAlias, ListStateMachineAliases
+
 ### 3.7.574.0 (2023-06-21 18:23 UTC)
 * DynamoDBv2 (3.7.104.1)
 	* Documentation updates for DynamoDB
