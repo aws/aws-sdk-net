@@ -80,7 +80,7 @@ namespace Amazon.Runtime
             if (source.TryGetProfile(profileName, out profile))
                 return profile.GetAWSCredentials(source, true);
 
-            throw new AmazonClientException("Unable to find the '" + profileName + "' profile in CredentialProfileStoreChain.");
+            throw new AmazonClientException($"Unable to find the \"{ profileName }\" profile in CredentialProfileStoreChain.");
         }
 
         /// If either AWS_CONTAINER_CREDENTIALS_RELATIVE_URI or AWS_CONTAINER_CREDENTIALS_FULL_URI environment variables are set, we want to attempt to retrieve credentials
@@ -142,7 +142,7 @@ namespace Amazon.Runtime
                     return storedProfile.GetAWSCredentials(source, true);
                 else
                 {
-                    throw new AmazonClientException("Unable to find the '" + profile.Name + "' profile in CredentialProfileStoreChain.");
+                    throw new AmazonClientException($"Unable to find the \"{ profile.Name }\" profile in CredentialProfileStoreChain.");
                 }
             }
             else

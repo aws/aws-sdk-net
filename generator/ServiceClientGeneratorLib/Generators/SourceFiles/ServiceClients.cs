@@ -286,7 +286,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ig");
             
             #line 120 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClients.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(fallbackToAnonymousCredentials ? ",fallbackToAnonymous: true" : ""));
+            this.Write(this.ToStringHelper.ToStringWithCulture(fallbackToAnonymousCredentials ? ", fallbackToAnonymous: true" : ""));
             
             #line default
             #line hidden

@@ -21,8 +21,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo(assemblyName: "AWSSDK.UnitTests.Net45")]
-[assembly: InternalsVisibleTo(assemblyName: "AWSSDK.UnitTests.Net35")]
 namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>

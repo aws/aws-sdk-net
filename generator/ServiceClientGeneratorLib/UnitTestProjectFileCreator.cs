@@ -82,6 +82,8 @@ namespace ServiceClientGenerator
                     projectProperties.EmbeddedResources = configuration.EmbeddedResources;
                     projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\AWSDotNetSDK.ruleset";
                     projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = @"..\..\AWSDotNetSDKForBuild.ruleset";
+                    projectProperties.SignBinaries = true;
+
                 }
                 else
                 {

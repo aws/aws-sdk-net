@@ -39,18 +39,7 @@ namespace Amazon.Runtime.Internal.Util
         public List<string> SubpropertyKeys { get; set; } = new List<string> ();
         public List<string> SubpropertyValues { get; set; } = new List<string> ();
     }
-#if BCL35
-internal class Tuple<T1, T2>
-{
-    public T1 Item1 { get; private set; }
-    public T2 Item2 { get; private set; }
-    internal Tuple(T1 item1, T2 item2)
-    {
-        Item1 = item1;
-        Item2 = item2;
-    }
-}
-#endif
+
     /// <summary>
     /// Provides read/write access to a file in the INI format.
     ///
@@ -58,6 +47,18 @@ internal class Tuple<T1, T2>
     /// </summary>
     public class IniFile
     {
+#if BCL35
+        private class Tuple<T1, T2>
+        {
+            internal T1 Item1 { get; private set; }
+            internal T2 Item2 { get; private set; }
+            internal Tuple(T1 item1, T2 item2)
+            {
+                Item1 = item1;
+                Item2 = item2;
+            }
+        }
+#endif
         private const string sectionNamePrefix = "[";
         private const string sectionNameSuffix = "]";
         private const string keyValueSeparator = "=";
