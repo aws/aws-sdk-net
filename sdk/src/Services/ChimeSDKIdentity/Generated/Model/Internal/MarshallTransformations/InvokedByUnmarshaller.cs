@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LexConfiguration Object
+    /// Response Unmarshaller for InvokedBy Object
     /// </summary>  
-    public class LexConfigurationUnmarshaller : IUnmarshaller<LexConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LexConfiguration, JsonUnmarshallerContext>
+    public class InvokedByUnmarshaller : IUnmarshaller<InvokedBy, XmlUnmarshallerContext>, IUnmarshaller<InvokedBy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LexConfiguration IUnmarshaller<LexConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InvokedBy IUnmarshaller<InvokedBy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LexConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public InvokedBy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LexConfiguration unmarshalledObject = new LexConfiguration();
+            InvokedBy unmarshalledObject = new InvokedBy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("InvokedBy", targetDepth))
-                {
-                    var unmarshaller = InvokedByUnmarshaller.Instance;
-                    unmarshalledObject.InvokedBy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LexBotAliasArn", targetDepth))
+                if (context.TestExpression("StandardMessages", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LexBotAliasArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StandardMessages = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LocaleId", targetDepth))
+                if (context.TestExpression("TargetedMessages", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocaleId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RespondsTo", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RespondsTo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WelcomeIntent", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WelcomeIntent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetedMessages = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         }
 
 
-        private static LexConfigurationUnmarshaller _instance = new LexConfigurationUnmarshaller();        
+        private static InvokedByUnmarshaller _instance = new InvokedByUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LexConfigurationUnmarshaller Instance
+        public static InvokedByUnmarshaller Instance
         {
             get
             {

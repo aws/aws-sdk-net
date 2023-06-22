@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LexConfiguration Marshaller
+    /// InvokedBy Marshaller
     /// </summary>
-    public class LexConfigurationMarshaller : IRequestMarshaller<LexConfiguration, JsonMarshallerContext> 
+    public class InvokedByMarshaller : IRequestMarshaller<InvokedBy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,41 +43,18 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LexConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(InvokedBy requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetInvokedBy())
+            if(requestObject.IsSetStandardMessages())
             {
-                context.Writer.WritePropertyName("InvokedBy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InvokedByMarshaller.Instance;
-                marshaller.Marshall(requestObject.InvokedBy, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("StandardMessages");
+                context.Writer.Write(requestObject.StandardMessages);
             }
 
-            if(requestObject.IsSetLexBotAliasArn())
+            if(requestObject.IsSetTargetedMessages())
             {
-                context.Writer.WritePropertyName("LexBotAliasArn");
-                context.Writer.Write(requestObject.LexBotAliasArn);
-            }
-
-            if(requestObject.IsSetLocaleId())
-            {
-                context.Writer.WritePropertyName("LocaleId");
-                context.Writer.Write(requestObject.LocaleId);
-            }
-
-            if(requestObject.IsSetRespondsTo())
-            {
-                context.Writer.WritePropertyName("RespondsTo");
-                context.Writer.Write(requestObject.RespondsTo);
-            }
-
-            if(requestObject.IsSetWelcomeIntent())
-            {
-                context.Writer.WritePropertyName("WelcomeIntent");
-                context.Writer.Write(requestObject.WelcomeIntent);
+                context.Writer.WritePropertyName("TargetedMessages");
+                context.Writer.Write(requestObject.TargetedMessages);
             }
 
         }
@@ -85,7 +62,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LexConfigurationMarshaller Instance = new LexConfigurationMarshaller();
+        public readonly static InvokedByMarshaller Instance = new InvokedByMarshaller();
 
     }
 }
