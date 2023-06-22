@@ -53,7 +53,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  </dd> <dt>DENIED</dt> <dd> 
     /// <para>
-    /// Messasge denied by the processor
+    /// Message denied by the processor
     /// </para>
     ///  </dd> </dl> <note> <ul> <li> 
     /// <para>

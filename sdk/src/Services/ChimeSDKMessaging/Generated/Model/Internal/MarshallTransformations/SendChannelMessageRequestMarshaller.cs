@@ -139,6 +139,22 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SubChannelId);
                 }
 
+                if(publicRequest.IsSetTarget())
+                {
+                    context.Writer.WritePropertyName("Target");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetListValue in publicRequest.Target)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetType())
                 {
                     context.Writer.WritePropertyName("Type");

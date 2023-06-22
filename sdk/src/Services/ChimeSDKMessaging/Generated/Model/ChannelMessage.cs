@@ -47,6 +47,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private Identity _sender;
         private ChannelMessageStatusStructure _status;
         private string _subChannelId;
+        private List<Target> _target = new List<Target>();
         private ChannelMessageType _type;
 
         /// <summary>
@@ -71,7 +72,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The message content.
+        /// The content of the channel message. For Amazon Lex V2 bot responses, this field holds
+        /// a list of messages originating from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
@@ -90,7 +94,11 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the channel message.
+        /// The content type of the channel message. For Amazon Lex V2 bot responses, the content
+        /// type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code>
+        /// for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=45)]
@@ -163,8 +171,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// The attributes for the message, used for message filtering along with a <code>FilterRule</code>
-        /// defined in the <code>PushNotificationPreferences</code>.
+        /// The attributes for the channel message. For Amazon Lex V2 bot responses, the attributes
+        /// are mapped to specific fields from the bot. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
+        /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -306,6 +316,27 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetSubChannelId()
         {
             return this._subChannelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Target. 
+        /// <para>
+        /// The target of a message, a sender, a user, or a bot. Only the target and the sender
+        /// can view targeted messages. Only users who can see targeted messages can take actions
+        /// on them. However, administrators can delete targeted messages that they can’t see.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Target> Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null && this._target.Count > 0; 
         }
 
         /// <summary>

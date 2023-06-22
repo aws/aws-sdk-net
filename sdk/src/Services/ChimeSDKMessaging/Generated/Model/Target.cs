@@ -29,48 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// Stores information about a message status.
+    /// The target of a message, a sender, a user, or a bot. Only the target and the sender
+    /// can view targeted messages. Only users who can see targeted messages can take actions
+    /// on them. However, administrators can delete targeted messages that they can’t see.
     /// </summary>
-    public partial class ChannelMessageStatusStructure
+    public partial class Target
     {
-        private string _detail;
-        private ChannelMessageStatus _value;
+        private string _memberArn;
 
         /// <summary>
-        /// Gets and sets the property Detail. 
+        /// Gets and sets the property MemberArn. 
         /// <para>
-        /// Contains more details about the message status.
+        /// The ARN of the target channel member.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
-        public string Detail
+        [AWSProperty(Min=5, Max=1600)]
+        public string MemberArn
         {
-            get { return this._detail; }
-            set { this._detail = value; }
+            get { return this._memberArn; }
+            set { this._memberArn = value; }
         }
 
-        // Check to see if Detail property is set
-        internal bool IsSetDetail()
+        // Check to see if MemberArn property is set
+        internal bool IsSetMemberArn()
         {
-            return this._detail != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The message status value.
-        /// </para>
-        /// </summary>
-        public ChannelMessageStatus Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._memberArn != null;
         }
 
     }

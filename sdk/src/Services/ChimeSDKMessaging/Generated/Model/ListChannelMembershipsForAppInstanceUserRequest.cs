@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannelMembershipsForAppInstanceUser operation.
-    /// Lists all channels that anr <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+    /// Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
     /// is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN
     /// that is not their own. 
     /// 
