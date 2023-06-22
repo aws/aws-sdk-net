@@ -38,6 +38,7 @@ namespace Amazon.StepFunctions.Model
         private LoggingConfiguration _loggingConfiguration;
         private string _mapRunArn;
         private string _name;
+        private string _revisionId;
         private string _roleArn;
         private string _stateMachineArn;
         private TracingConfiguration _tracingConfiguration;
@@ -136,6 +137,31 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The revision identifier for the state machine. The first revision ID when you create
+        /// the state machine is null.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the state machine <code>revisionId</code> parameter to compare the revision of
+        /// a state machine with the configuration of the state machine used for executions without
+        /// performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+        /// </para>
+        /// </summary>
+        public string RevisionId
+        {
+            get { return this._revisionId; }
+            set { this._revisionId = value; }
+        }
+
+        // Check to see if RevisionId property is set
+        internal bool IsSetRevisionId()
+        {
+            return this._revisionId != null;
         }
 
         /// <summary>

@@ -111,10 +111,22 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stateMachineAliasArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StateMachineAliasArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stateMachineArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StateMachineArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stateMachineVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StateMachineVersionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

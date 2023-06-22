@@ -84,6 +84,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPublish())
+                {
+                    context.Writer.WritePropertyName("publish");
+                    context.Writer.Write(publicRequest.Publish);
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");
@@ -105,6 +111,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.TracingConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVersionDescription())
+                {
+                    context.Writer.WritePropertyName("versionDescription");
+                    context.Writer.Write(publicRequest.VersionDescription);
                 }
 
                 writer.WriteObjectEnd();

@@ -63,6 +63,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.StateMachineArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stateMachineVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StateMachineVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -86,6 +92,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArn"))
                 {
                     return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -125,6 +135,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTags"))
                 {
                     return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonStepFunctionsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

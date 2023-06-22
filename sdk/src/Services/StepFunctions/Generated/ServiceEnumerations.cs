@@ -649,6 +649,10 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly ValidationExceptionReason CANNOT_UPDATE_COMPLETED_MAP_RUN = new ValidationExceptionReason("CANNOT_UPDATE_COMPLETED_MAP_RUN");
         /// <summary>
+        /// Constant INVALID_ROUTING_CONFIGURATION for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_ROUTING_CONFIGURATION = new ValidationExceptionReason("INVALID_ROUTING_CONFIGURATION");
+        /// <summary>
         /// Constant MISSING_REQUIRED_PARAMETER for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_REQUIRED_PARAMETER = new ValidationExceptionReason("MISSING_REQUIRED_PARAMETER");

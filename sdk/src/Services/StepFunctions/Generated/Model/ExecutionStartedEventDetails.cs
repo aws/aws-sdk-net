@@ -36,6 +36,8 @@ namespace Amazon.StepFunctions.Model
         private string _input;
         private HistoryEventExecutionDataDetails _inputDetails;
         private string _roleArn;
+        private string _stateMachineAliasArn;
+        private string _stateMachineVersionArn;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -92,6 +94,46 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMachineAliasArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies a state machine alias used for starting
+        /// the state machine execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateMachineAliasArn
+        {
+            get { return this._stateMachineAliasArn; }
+            set { this._stateMachineAliasArn = value; }
+        }
+
+        // Check to see if StateMachineAliasArn property is set
+        internal bool IsSetStateMachineAliasArn()
+        {
+            return this._stateMachineAliasArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMachineVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies a state machine version used for starting
+        /// the state machine execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string StateMachineVersionArn
+        {
+            get { return this._stateMachineVersionArn; }
+            set { this._stateMachineVersionArn = value; }
+        }
+
+        // Check to see if StateMachineVersionArn property is set
+        internal bool IsSetStateMachineVersionArn()
+        {
+            return this._stateMachineVersionArn != null;
         }
 
     }

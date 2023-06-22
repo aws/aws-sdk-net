@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Could not find the referenced resource. Only state machine and activity ARNs are supported.
+    /// Could not find the referenced resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
