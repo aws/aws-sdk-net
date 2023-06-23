@@ -31,6 +31,14 @@ namespace Amazon.VerifiedPermissions.Model
     /// <summary>
     /// Container for the parameters to the CreatePolicyStore operation.
     /// Creates a policy store. A policy store is a container for policy resources.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
+    /// multiple namespaces</a>, Verified Permissions currently supports only one namespace
+    /// per policy store.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreatePolicyStoreRequest : AmazonVerifiedPermissionsRequest
     {

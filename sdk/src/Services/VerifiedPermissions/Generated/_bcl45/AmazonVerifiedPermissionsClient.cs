@@ -109,15 +109,18 @@ namespace Amazon.VerifiedPermissions
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Parameters that end in <code>Detail</code> are used in <code>Get</code> operations.
+    /// Parameter type structures that end in <code>Detail</code> are used in <code>Get</code>
+    /// operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Parameters that end in <code>Item</code> are used in <code>List</code> operations.
+    /// Parameter type structures that end in <code>Item</code> are used in <code>List</code>
+    /// operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Parameters that use neither suffix are used in the mutating (create and update) operations.
+    /// Parameter type structures that use neither suffix are used in the mutating (create
+    /// and update) operations.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -1013,6 +1016,14 @@ namespace Amazon.VerifiedPermissions
 
         /// <summary>
         /// Creates a policy store. A policy store is a container for policy resources.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
+        /// multiple namespaces</a>, Verified Permissions currently supports only one namespace
+        /// per policy store.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyStore service method.</param>
         /// 
@@ -1144,6 +1155,14 @@ namespace Amazon.VerifiedPermissions
 
         /// <summary>
         /// Creates a policy store. A policy store is a container for policy resources.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Although <a href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
+        /// multiple namespaces</a>, Verified Permissions currently supports only one namespace
+        /// per policy store.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicyStore service method.</param>
         /// <param name="cancellationToken">

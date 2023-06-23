@@ -86,9 +86,15 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// Specifies the list of entities and their associated attributes that Verified Permissions
-        /// can examine when evaluating the policies.
+        /// Specifies the list of resources and principals and their associated attributes that
+        /// Verified Permissions can examine when evaluating the policies. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can include only principal and resource entities in this parameter; you can't
+        /// include actions. You must specify actions in the schema.
+        /// </para>
+        ///  </note>
         /// </summary>
         public EntitiesDefinition Entities
         {
