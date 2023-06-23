@@ -85,13 +85,13 @@
 	if(Convert.ToBoolean(this.Session["NetStandardSupport"]))
 	{
 #>
-	<file src="<#=Path.Combine(".", "bin", "Release", "netstandard2.0", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\netstandard2.0" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "netstandard2.0", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\netstandard2.0" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "netstandard2.0", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\\<#=this.Session["AssemblyName"]#>.dll" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\\<#=this.Session["AssemblyName"]#>.xml" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\netstandard2.0" />
 
-    <file src="<#=Path.Combine(".", "bin", "Release", "netcoreapp3.1", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\netcoreapp3.1" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "netcoreapp3.1", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\netcoreapp3.1" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "netcoreapp3.1", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\\<#=this.Session["AssemblyName"]#>.dll" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\\<#=this.Session["AssemblyName"]#>.xml" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\netcoreapp3.1" />
 <#
 	}
 #>
