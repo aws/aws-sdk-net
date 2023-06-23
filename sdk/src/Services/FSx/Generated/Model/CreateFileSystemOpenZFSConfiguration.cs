@@ -134,12 +134,12 @@ namespace Amazon.FSx.Model
         /// <para>
         ///  <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities
         /// of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all Amazon Web Services
-        /// Regions where Amazon FSx for OpenZFS is available, except US West (Oregon).
+        /// Regions where Amazon FSx for OpenZFS is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-        /// - 10,240 MBps using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only
+        /// - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only
         /// in the US East (N. Virginia), US East (Ohio), US West (Oregon), and Europe (Ireland)
         /// Amazon Web Services Regions.
         /// </para>

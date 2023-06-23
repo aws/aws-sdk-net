@@ -65,9 +65,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays. 
         /// <para>
-        /// The number of days to retain automatic daily backups. Setting this to zero (0) disables
-        /// automatic daily backups. You can retain automatic daily backups for a maximum of 90
-        /// days. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
+        /// The number of days to retain automatic backups. Setting this property to <code>0</code>
+        /// disables automatic backups. You can retain automatic backups for a maximum of 90 days.
+        /// The default is <code>30</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
         /// with Automatic Daily Backups</a>.
         /// </para>
         /// </summary>
