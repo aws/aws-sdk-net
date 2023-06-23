@@ -1,3 +1,13 @@
+### 3.7.576.0 (2023-06-23 18:21 UTC)
+* DevOpsGuru (3.7.103.0)
+	* This release adds support for encryption via customer managed keys.
+* FSx (3.7.103.4)
+	* Update to Amazon FSx documentation.
+* RDS (3.7.119.12)
+	* Documentation improvements for create, describe, and modify DB clusters and DB instances.
+* VerifiedPermissions (3.7.100.3)
+	* Added improved descriptions and new code samples to SDK documentation.
+
 ### 3.7.575.0 (2023-06-22 18:21 UTC)
 * ChimeSDKIdentity (3.7.102.0)
 	* AppInstanceBots can be configured to be invoked or not using the Target or the CHIME.mentions attribute for ChannelMessages
