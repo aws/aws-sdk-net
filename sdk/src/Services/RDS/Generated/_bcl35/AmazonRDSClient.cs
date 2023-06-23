@@ -4698,8 +4698,8 @@ namespace Amazon.RDS
         #region  DescribeDBClusters
 
         /// <summary>
-        /// Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This
-        /// API supports pagination.
+        /// Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports
+        /// pagination.
         /// 
         ///  
         /// <para>
@@ -5046,7 +5046,7 @@ namespace Amazon.RDS
         #region  DescribeDBInstances
 
         /// <summary>
-        /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// Describes provisioned RDS instances. This API supports pagination.
         /// 
         ///  <note> 
         /// <para>
@@ -5067,7 +5067,7 @@ namespace Amazon.RDS
         }
 
         /// <summary>
-        /// Returns information about provisioned RDS instances. This API supports pagination.
+        /// Describes provisioned RDS instances. This API supports pagination.
         /// 
         ///  <note> 
         /// <para>
@@ -7594,7 +7594,7 @@ namespace Amazon.RDS
         #region  ModifyDBCluster
 
         /// <summary>
-        /// Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You
+        /// Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You
         /// can change one or more settings by specifying these parameters and the new values
         /// in the request.
         /// 

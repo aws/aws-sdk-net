@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code>
-    /// DB engine mode.
+    /// The scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine
+    /// mode.
     /// 
     ///  
     /// <para>

@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusters operation.
-    /// Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters. This
-    /// API supports pagination.
+    /// Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This API supports
+    /// pagination.
     /// 
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB
-        /// cluster. If this parameter is specified, information from only the specific DB cluster
+        /// cluster. If this parameter is specified, information for only the specific DB cluster
         /// is returned. This parameter isn't case-sensitive.
         /// </para>
         ///  
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match an existing DBClusterIdentifier.
+        /// If supplied, must match an existing DB cluster identifier.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported filters:
+        /// Supported Filters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -139,8 +139,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Optional Boolean parameter that specifies whether the output includes information
-        /// about clusters shared from other Amazon Web Services accounts.
+        /// Specifies whether the output includes information about clusters shared from other
+        /// Amazon Web Services accounts.
         /// </para>
         /// </summary>
         public bool IncludeShared
