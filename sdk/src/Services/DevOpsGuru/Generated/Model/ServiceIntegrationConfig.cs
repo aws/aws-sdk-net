@@ -34,8 +34,28 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ServiceIntegrationConfig
     {
+        private KMSServerSideEncryptionIntegration _kmsServerSideEncryption;
         private LogsAnomalyDetectionIntegration _logsAnomalyDetection;
         private OpsCenterIntegration _opsCenter;
+
+        /// <summary>
+        /// Gets and sets the property KMSServerSideEncryption. 
+        /// <para>
+        ///  Information about whether DevOps Guru is configured to encrypt server-side data using
+        /// KMS. 
+        /// </para>
+        /// </summary>
+        public KMSServerSideEncryptionIntegration KMSServerSideEncryption
+        {
+            get { return this._kmsServerSideEncryption; }
+            set { this._kmsServerSideEncryption = value; }
+        }
+
+        // Check to see if KMSServerSideEncryption property is set
+        internal bool IsSetKMSServerSideEncryption()
+        {
+            return this._kmsServerSideEncryption != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogsAnomalyDetection. 
